@@ -3,129 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <style>
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-.calculator {
-    width: 300px;
-    background-color:black;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.display {
-    background-color: #333;
-    color: #fff;
-    font-size: 2em;
-    text-align: right;
-    padding: 20px;
-}
-
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-    margin: 1rem;
-}
-
-.button {
-    padding: 10px;
-    font-size: 1.2em;
-    border: none;
-    background-color: #f9f9f9;
-    cursor: pointer;
-    border-radius: 2rem;
-    
-}
-
-.button:active {
-    background-color: #ddd;
-}
-
-.button:nth-child(4n) {
-    background-color: #ff9500;
-    color: #fff;
-}
-
-.button:nth-child(4n):active {
-    background-color: #e48900;
-}
-.name
-{
-    color: white;
-    margin-left: 1rem;
-}
-
-    </style>
+    <title>Responsive Landing Page</title>
+    <link rel="stylesheet" href="landingpage.css">
 </head>
 <body>
-    <div class="calculator">
-        <p class="name">Gopinath</p>
-        <div class="display" id="display">0</div>
-        <div class="buttons">
-            <button class="button" onclick="clearDisplay()">AC</button>
-            <button class="button" onclick="deleteLast()">C</button>
-            <button class="button" onclick="appendCharacter('%')">%</button>
-            <button class="button" onclick="appendCharacter('/')">/</button>
-            <button class="button" onclick="appendCharacter('7')">7</button>
-            <button class="button" onclick="appendCharacter('8')">8</button>
-            <button class="button" onclick="appendCharacter('9')">9</button>
-            <button class="button" onclick="appendCharacter('*')">*</button>
-            <button class="button" onclick="appendCharacter('4')">4</button>
-            <button class="button" onclick="appendCharacter('5')">5</button>
-            <button class="button" onclick="appendCharacter('6')">6</button>
-            <button class="button" onclick="appendCharacter('-')">-</button>
-            <button class="button" onclick="appendCharacter('1')">1</button>
-            <button class="button" onclick="appendCharacter('2')">2</button>
-            <button class="button" onclick="appendCharacter('3')">3</button>
-            <button class="button" onclick="appendCharacter('+')">+</button>
-            <button class="button" onclick="appendCharacter('0')">0</button>
-            <button class="button" onclick="appendCharacter('00')">00</button>
-            <button class="button" onclick="appendCharacter('.')">.</button>
-            <button class="button" onclick="calculateResult()" rowspan="2">=</button>
+    <nav>
+        <div class="menu">
+            <div class="menuitem">Cycle Motor</div>
+            <div class="menuitem"><a href="#home">Home</a></div>
+            <div class="menuitem"><a href="#features">Features</a></div>
+            <div class="menuitem"><a href="#pages">Pages</a></div>
+            <div class="menuitem"><a href="#contacts">Contacts</a></div>
+            <div class="btn"><button id="purchase">Purchase</button></div>
+        </div>
+    </nav>
+    <div id="home" class="info">
+        <h1>Your Ultimate<br> Cycling Destination</h1>
+        <div class="img">
+            <img src="cycle.png" alt="Cycle Image">
         </div>
     </div>
-    <script>
-
-let display = document.getElementById('display');
-
-function clearDisplay() {
-    display.textContent = '0';
-}
-
-function deleteLast() {
-    display.textContent = display.textContent.slice(0, -1);
-    if (display.textContent === '') {
-        display.textContent = '0';
-    }
-}
-
-function appendCharacter(character) {
-    if (display.textContent === '0') {
-        display.textContent = character;
-    } else {
-        display.textContent += character;
-    }
-}
-
-function calculateResult() {
-    try {
-        display.textContent = eval(display.textContent);
-    } catch {
-        display.textContent = 'Error';
-    }
-}
-
-    </script>
+    <div class="msg">
+        <p>
+            Find your health and happiness.<br> Shop high-quality bikes that get you moving wherever you want.
+        </p>
+    </div>
+    <section id="features" class="features">
+        <h2>Our Features</h2>
+        <div class="feature-item">
+            <h3>Feature One</h3>
+            <p>
+                Material: Common materials include aluminum, carbon fiber, and steel.Aluminum is lightweight and affordable,<br> carbon fiber is even lighter and offers better shock absorption, while steel is strong and provides a smooth ride.
+            </p>
+        </div>
+        <div class="feature-item">
+            <h3>Feature Two</h3>
+            <p>Geometry: MTB frames are designed to provide a balanced and<br> stable ride on rough terrain, with slacker head tube angles and shorter chainstays for better handling and control.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Feature Three</h3>
+            <p>Full Suspension (Dual Suspension): Both front and rear <br>suspension systems for maximum shock absorption, ideal for very rough and technical trails.
+            </p>
+        </div>
+    </section>
+    <section id="testimonials" class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <p>"This is the best bike I've ever purchased!"</p>
+        <p>"Amazing quality and great customer service."</p>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2024 Cycle Motor. All rights reserved.</p>
+    </footer>
 </body>
 </html>
